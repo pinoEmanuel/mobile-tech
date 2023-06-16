@@ -111,4 +111,4 @@ function elegirCuotas(subTotal){
     }
 }
 
-inicio()
+//inicio()
