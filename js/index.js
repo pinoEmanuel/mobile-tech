@@ -1,22 +1,63 @@
-const interesCompra = 1.33
-const carrito = []
+//modificar el css de los celulares
+//funcionalidad boton quitar carrito
+//poner mas celulares con nombres, precios e imagenes
 
-class Compra {
-    constructor(carritoCompra){
-        this.carrito = carritoCompra
-    }
-    obtenerSubTotal() {
-        if (this.carrito.length > 0){
-            return this.carrito.reduce((acc, celular) => acc + celular.monto, 0)
-        }
-    }
+
+const interesCompra = 1.33
+const checkout = []
+
+const contenedor = document.querySelector('div.contenedor#contenedor')
+
+const celulares =  [{id: 1, imagen: "", nombre: "Apple", monto: 160000, stock: 200},
+                    {id: 2, imagen: "", nombre: "Motorola", monto: 145000, stock: 200},
+                    {id: 3, imagen: "", nombre: "Samsung", monto: 170000, stock: 200},
+                    {id: 4, imagen: "", nombre: "Xiaomi", monto: 125000, stock: 200},
+                    {id: 5, imagen: "", nombre: "TCL", monto: 126000, stock: 200}]
+
+function cardsHTML(celular){
+    return `<div class="div-card"> 
+                <div class="imagen"><img>${celular.imagen}</img></div>
+                <div class="nombre"><p>${celular.nombre}</p></div>
+                <div class="monto"><p>${celular.monto}</p></div>
+                <div class="comprar"><button id="${celular.id}" class="button button-outline">Agregar al Carrito</button></div>
+            </div>`
 }
 
-const celulares =  [{id: 1, nombre: "Apple", monto: 160000, stock: 200},
-                    {id: 2, nombre: "Motorola", monto: 145000, stock: 200},
-                    {id: 3, nombre: "Samsung", monto: 170000, stock: 200},
-                    {id: 4, nombre: "Xiaomi", monto: 125000, stock: 200},
-                    {id: 5, nombre: "TCL", monto: 126000, stock: 200}]
+function cargarCelulares(){
+    contenedor.innerHTML = ''
+    celulares.forEach((celular)=> {
+        contenedor.innerHTML += cardsHTML(celular)
+    })
+    activarBotonAgregarCarrito()
+}
+
+function activarBotonAgregarCarrito(){
+    const botones = document.querySelectorAll("button.button.button-outline")
+        for(let boton of botones) {
+            boton.addEventListener("click", (a)=> {
+                const celularElegido = celulares.find((celular)=> celular.id === parseInt(a.target.id))
+                checkout.push(celularElegido)
+                localStorage.setItem("carritoCompra", JSON.stringify(checkout))
+            })
+        }
+}
+
+cargarCelulares()
+
+
+
+
+// class Compra {
+//     constructor(carritoCompra){
+//         this.carrito = carritoCompra
+//     }
+//     obtenerSubTotal() {
+//         if (this.carrito.length > 0){
+//             return this.carrito.reduce((acc, celular) => acc + celular.monto, 0)
+//         }
+//     }
+// }
+
 
 function buscarCelular(id){
     let resultado = celulares.find((celular)=> celular.id === parseInt(id))

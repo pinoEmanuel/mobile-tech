@@ -52,3 +52,106 @@ h3{
     font-size: 15px;
     padding-top: 30px;
 }
+
+.div-card {
+    display: flexbox;
+    margin: 6px;
+    padding: 2px;
+    text-align: center;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: lightblue;
+    box-shadow: 10px 6px 6px rgba(211, 211, 211, 0.221);
+    width: 220px;
+    height: 250px;
+}
+.div-card:hover {
+    background-color:rgb(229, 248, 255);
+    transition: .5s ease-in;
+    box-shadow: 5px 20px 60px rgba(211, 211, 211, 0.519);
+}
+
+div.imagen {
+    font-size: 120px !important;
+}
+
+div.nombre {
+    font-size: 18px;
+}
+
+div.monto {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+button {
+    font-size: 10px;
+    padding: 0px;
+}
+
+button, button:not(:hover) {
+    background-color: darkslategray;
+    border-color: gray;
+}
+
+button:hover {
+    background-color: darkcyan;
+    color: whitesmoke;
+    border-color: lightgray;
+}
+
+button:active {
+    background-color: black;
+    color: whitesmoke;
+    border-color: black;
+}
+
+.wobble-hor-bottom {
+	        animation: wobble-hor-bottom 0.8s both;
+}
+
+ @-webkit-keyframes wobble-hor-bottom {
+    0%,
+    100% {
+              transform: translateX(0%);
+              transform-origin: 50% 50%;
+    }
+    15% {
+              transform: translateX(-30px) rotate(-6deg);
+    }
+    30% {
+              transform: translateX(15px) rotate(6deg);
+    }
+    45% {
+              transform: translateX(-15px) rotate(-3.6deg);
+    }
+    60% {
+              transform: translateX(9px) rotate(2.4deg);
+    }
+    75% {
+              transform: translateX(-6px) rotate(-1.2deg);
+    }
+  }
+  @keyframes wobble-hor-bottom {
+    0%,
+    100% {
+              transform: translateX(0%);
+              transform-origin: 50% 50%;
+    }
+    15% {
+              transform: translateX(-30px) rotate(-6deg);
+    }
+    30% {
+              transform: translateX(15px) rotate(6deg);
+    }
+    45% {
+              transform: translateX(-15px) rotate(-3.6deg);
+    }
+    60% {
+              transform: translateX(9px) rotate(2.4deg);
+    }
+    75% {
+              transform: translateX(-6px) rotate(-1.2deg);
+    }
+  }
