@@ -1,5 +1,5 @@
 * {
-    background-color: rgb(238, 238, 6238);
+    background-color: rgb(199, 199, 199);
     margin: 10px
 }
 
@@ -88,6 +88,7 @@ div.monto {
 button {
     font-size: 10px;
     padding: 0px;
+    
 }
 
 button, button:not(:hover) {
