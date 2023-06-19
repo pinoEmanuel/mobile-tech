@@ -1,7 +1,4 @@
 //funcionalidad boton quitar carrito celularCarrito.id
-//funcionalidad confirmar que se vea el total (lunes a la tarde)
-
-
 
 const checkout = []
 const contenedor = document.querySelector('div.contenedor#contenedor')
@@ -26,7 +23,6 @@ const celulares =  [{id: 1, imagen: "/resources/14promax.jpg", nombre: "Apple iP
                     {id: 18, imagen: "/resources/13ultra.jpg", nombre: "Xiaomi 13 Ultra", monto: 500000, stock: 200},
                     {id: 19, imagen: "/resources/xiaomi13pro.jpg", nombre: "Xiaomi 13 Pro", monto: 300000, stock: 200},
                     {id: 20, imagen: "/resources/12tpro.jpg", nombre: "Xiaomi 12T Pro", monto: 250000, stock: 200}]
-
 
 function cardsHTML(celular){
     return `<div class="div-card"> 

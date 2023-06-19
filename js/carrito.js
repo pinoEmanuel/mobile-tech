@@ -1,14 +1,8 @@
 const checkout = recuperarCarritoLS()
 const tbody = document.querySelector("tbody")
 const btnComprar = document.querySelector("button#botonComprar")
-
-function calcularYMostrarCuotaMensual(monto, meses, interes){
-    console.log("--- DETALLE DE LAS CUOTAS ---")
-    let calculoCuotas = (monto * interes) / meses
-    for (let i = 1; i <=  meses; i++){
-        console.log("Cuota ", i, "AR$ ", calculoCuotas.toFixed(2))
-    }
-}
+const divTotal = document.querySelector("div.total#total")
+let subTotal = 0
 
 function recuperarCarritoLS() {
     if(localStorage.getItem("carritoCompra")){
@@ -16,6 +10,14 @@ function recuperarCarritoLS() {
     }
     else{
         return []
+    }
+}
+
+function calcularSubTotal () {
+    if (subTotal === 0){
+        for (let i in checkout){
+            subTotal += checkout[i].monto
+        }
     }
 }
 
@@ -28,12 +30,17 @@ function cargarCarrito(celularCarrito){
             </tr>`
 }
 
-function activarBotonComprar() {
-    btnComprar.addEventListener("click", () => {
-        alert("Compra realizada con exito!")
-        
-        
+function cargarTotal(){
+    calcularSubTotal()
+    return `<h1 id="saludo">Gracias por su compra!</h1>
+            <h2 id="total">El total es de: $ ${subTotal}</h2>`
+}
 
+function activarBotonComprar() {
+    divTotal.innerHTML = ""
+    btnComprar.addEventListener("click", () => {
+        divTotal.innerHTML = cargarTotal()
+        
     })
 }
 
@@ -45,24 +52,3 @@ if(checkout.length > 0){
 }
 
 activarBotonComprar()
-//activarBotonConfirmar()
-
-
-
-
-
-
-
-
-
-
-function activarBotonConfirmar() {
-    btnConfirmar.addEventListener("click", () => {
-        console.log("a")
-        console.log(calcularYMostrarCuotaMensual(subTotal, cantCuotas.value ,interesCompra))
-    })
-}
-
-function obtenerSubTotal() {
-    subTotal = JSON.parse(localStorage.getItem("carritoCompra")).reduce((acc, celular) => acc + celular.monto, 0)
-}
