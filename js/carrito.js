@@ -1,6 +1,6 @@
 const checkout = recuperarCarritoLS()
 const tbody = document.querySelector("tbody")
-
+const btnComprar = document.querySelector("button#botonComprar")
 
 function calcularYMostrarCuotaMensual(monto, meses, interes){
     console.log("--- DETALLE DE LAS CUOTAS ---")
@@ -20,13 +20,23 @@ function recuperarCarritoLS() {
 }
 
 function cargarCarrito(celularCarrito){
-    return `<tr>    
-                <td><img src="${celularCarrito.imagen}"></img></td>
-                <td>${celularCarrito.nombre}</td>
-                <td>${celularCarrito.monto}</td>
-                <td><img src="resources/checkout.png" width= "30px"></td>
+    return `<tr class=carrito>    
+                <td class="imagen"><img src="${celularCarrito.imagen}"></img></td>
+                <td class="nombre">${celularCarrito.nombre}</td>
+                <td class="monto">${celularCarrito.monto}</td>
+                <td class="quitar"><img src="resources/checkout.png""></td>
             </tr>`
 }
+
+function activarBotonComprar() {
+    btnComprar.addEventListener("click", () => {
+        alert("Compra realizada con exito!")
+        
+        
+
+    })
+}
+
 
 if(checkout.length > 0){
     checkout.forEach(celularCarrito => {
@@ -34,7 +44,7 @@ if(checkout.length > 0){
     })
 }
 
-//activarBotonComprar()
+activarBotonComprar()
 //activarBotonConfirmar()
 
 
@@ -43,26 +53,8 @@ if(checkout.length > 0){
 
 
 
-const btnComprar = document.querySelector("button#botonComprar")
-const divCuotas = document.getElementById("cuotas")
-const btnConfirmar = document.querySelector("button.button#btnConfirmar")
-const cantCuotas = document.getElementById("inputCuotas")
-const interesCompra = 1.33
 
-function activarBotonComprar() {
-    divCuotas.innerHTML = ""
-    btnComprar.addEventListener("click", () => {
-         if(divCuotas.innerHTML === ""){
-            divCuotas.innerHTML += generarCuotas()
-         }       
-    })
-}
 
-function generarCuotas() {
-    return `<td><p>Ingrese la cantidad de cuotas en la que desea pagar: </p></td>
-            <input type="number" id="inputCuotas" min=1 max=48>
-            <button class="button" id="btnConfirmar">Confirmar</button>`
-}
 
 function activarBotonConfirmar() {
     btnConfirmar.addEventListener("click", () => {

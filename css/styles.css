@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css");
+
 * {
     background-color: rgb(199, 199, 199);
     margin: 10px
@@ -9,6 +13,7 @@ body {
     align-content: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 
 div#display {
     background-color: black;
@@ -23,7 +28,7 @@ div#display {
 img{
     display: block;
     margin: auto;
-    width: 60%
+    width: 60%;
 }
 
 .ir-carrito{
@@ -37,6 +42,7 @@ img{
 h1{
     text-align: center;
     padding: 45px;
+    color:rgb(202, 123, 32)
 }
 
 h2 {
@@ -49,40 +55,96 @@ h2 {
 h3{
     text-align: center;
     height: 8px;
-    font-size: 15px;
+    margin: 10px;
+    font-size: 20px;
     padding-top: 30px;
 }
 
 .div-card {
     display: flexbox;
-    margin: 6px;
-    padding: 2px;
+    margin: 20px;
+    padding: px;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 20px;
     border-width: 1px;
     border-style: solid;
-    border-color: lightblue;
+    border-color: rgb(0, 0, 0);
     box-shadow: 10px 6px 6px rgba(211, 211, 211, 0.221);
-    width: 220px;
-    height: 250px;
+    width: 280px;
+    height: 460px;
+    align-content: right;
+}
+
+.contenedor {
+    gap: 0px;
+    margin-top: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .div-card:hover {
-    background-color:rgb(229, 248, 255);
+    background-color:rgb(160, 160, 160);
     transition: .5s ease-in;
     box-shadow: 5px 20px 60px rgba(211, 211, 211, 0.519);
 }
 
 div.imagen {
-    font-size: 120px !important;
+    
+    width: 210px !important;
+    padding-top: 10%;
+    padding-left: 18% ;
+    
+}
+
+div.comprar{
+    align-items: center;
+    padding-top: 4%;
 }
 
 div.nombre {
     font-size: 18px;
+    font-weight: bold;
 }
 
 div.monto {
-    font-size: 16px;
-    font-weight: 700;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+b{
+    text-align: right;
+    font-size: 30px;
+}
+
+.div-button {
+    text-align: right;
+    
+}
+
+thead.thead{
+    font-size: 20px;
+    text-align: center;
+    
+}
+
+td.quitar{
+    width: 100px;
+    align-items: center;
+}
+
+td.nombre{
+    text-align: center;
+}
+
+td.monto{
+    text-align: center;
+}
+
+td.imagen{
+    width: 100px;
+    align-items: center;
 }
 
 button {
@@ -92,19 +154,19 @@ button {
 }
 
 button, button:not(:hover) {
-    background-color: darkslategray;
-    border-color: gray;
+    background-color: rgb(52, 88, 10);
+    border-color: rgb(66, 66, 66);
 }
 
 button:hover {
-    background-color: darkcyan;
-    color: whitesmoke;
+    background-color: rgb(139, 0, 0);
+    color: rgb(255, 0, 0);
     border-color: lightgray;
 }
 
 button:active {
     background-color: black;
-    color: whitesmoke;
+    color: rgb(247, 0, 0);
     border-color: black;
 }
 

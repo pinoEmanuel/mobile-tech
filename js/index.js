@@ -1,6 +1,6 @@
 //funcionalidad boton quitar carrito celularCarrito.id
-//funcionalidad confirmar para cuotas y que se vean las cuotas (lunes a la tarde)
-//modificar el css de los celulares y demas botones(martes a la mañana y tarde)
+//funcionalidad confirmar que se vea el total (lunes a la tarde)
+
 
 
 const checkout = []
@@ -30,7 +30,7 @@ const celulares =  [{id: 1, imagen: "/resources/14promax.jpg", nombre: "Apple iP
 
 function cardsHTML(celular){
     return `<div class="div-card"> 
-                <div class="imagen"><img src=${celular.imagen} width="2"></img></div>
+                <div class="imagen"><img src=${celular.imagen}></img></div>
                 <div class="nombre"><p>${celular.nombre}</p></div>
                 <div class="monto"><p>${celular.monto}</p></div>
                 <div class="comprar"><button id="${celular.id}" class="button button-outline">Agregar al Carrito</button></div>
@@ -58,22 +58,3 @@ function activarBotonAgregarCarrito(){
 }
 
 cargarCelulares()
-
-
-
-
-// class Compra {
-//     constructor(carritoCompra){
-//         this.carrito = carritoCompra
-//     }
-//     obtenerSubTotal() {
-//         if (this.carrito.length > 0){
-//             return this.carrito.reduce((acc, celular) => acc + celular.monto, 0)
-//         }
-//     }
-// }
-
-function buscarCelular(id){
-    let resultado = celulares.find((celular)=> celular.id === parseInt(id))
-    return resultado
-}
