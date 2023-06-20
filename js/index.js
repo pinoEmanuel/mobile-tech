@@ -1,6 +1,3 @@
-//funcionalidad boton quitar carrito celularCarrito.id
-
-const checkout = []
 const contenedor = document.querySelector('div.contenedor#contenedor')
 
 const celulares =  [{id: 1, imagen: "/resources/14promax.jpg", nombre: "Apple iPhone 14 Pro Max", monto: 700000, stock: 200},
@@ -45,7 +42,7 @@ function activarBotonAgregarCarrito(){
     const botones = document.querySelectorAll("button.button.button-outline")
         for(let boton of botones) {
             boton.addEventListener("click", (a)=> {
-                const celularElegido = celulares.find((celular)=> celular.id === parseInt(a.target.id))
+                const celularElegido = celulares.find((celular)=> celular.id === parseInt(a.target.id))       
                 checkout.push(celularElegido)
                 localStorage.setItem("carritoCompra", JSON.stringify(checkout))
                 alert("Producto agregado al carrito correctamente.")

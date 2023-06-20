@@ -14,7 +14,6 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-
 div#display {
     background-color: black;
     color: lightblue;
@@ -43,6 +42,12 @@ h1#titulo{
     text-align: center;
     padding: 45px;
     color:rgb(202, 123, 32)
+}
+
+h1#items{
+    text-align: left;
+    height: 8px;
+    font-size: 20px;
 }
 
 h2#concept {
@@ -104,11 +109,9 @@ h2#total{
 }
 
 div.imagen {
-    
     width: 210px !important;
     padding-top: 10%;
     padding-left: 18% ;
-    
 }
 
 div.comprar{
@@ -126,15 +129,16 @@ div.monto {
     font-weight: 400;
 }
 
-b{
-    text-align: right;
-    font-size: 30px;
+b#carritoCompra{
+    text-align: left;
+    font-size: 20px;
 }
 
 .div-button {
     text-align: right;
-    
+    padding-top: -100%;
 }
+
 
 thead.thead{
     font-size: 20px;

@@ -6,13 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/index.js"></script>
     <script defer src="js/carrito.js"></script>  
 </head>    
 <body>
     <header>
         <b id="carritoCompra">Carrito de compras</b>
+        <h1 id="items"></h1>
         <div class="div-button">
-            <button class="button button-outline"><a href="index.html">Volver a comprar.</a></button>
+            <button class="button button-outline" id="volver"><a href="index.html">Volver a comprar.</a></button>
         </div>
     </header>
     <main>
@@ -23,7 +25,6 @@
                         <th id="tablehead">Producto</th>
                         <th id="tablehead">Descripción</th>
                         <th id="tablehead">Importe</th>
-                        <th id="tablehead">Quitar</th>
                     </tr>
                 </thead>
                 <tbody>
