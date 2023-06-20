@@ -88,7 +88,7 @@ h2#total{
     border-style: solid;
     border-color: rgb(0, 0, 0);
     box-shadow: 10px 6px 6px rgba(211, 211, 211, 0.221);
-    width: 280px;
+    width: 320px;
     height: 460px;
     align-content: right;
 }
@@ -111,7 +111,7 @@ h2#total{
 div.imagen {
     width: 210px !important;
     padding-top: 10%;
-    padding-left: 18% ;
+    padding-left: 30% ;
 }
 
 div.comprar{
@@ -146,21 +146,18 @@ thead.thead{
     
 }
 
-td.quitar{
-    width: 100px;
-    align-items: center;
-}
-
 td.nombre{
+    font-size: 25px;
     text-align: center;
 }
 
 td.monto{
+    font-size: 25px;
     text-align: center;
 }
 
 td.imagen{
-    width: 100px;
+    width: 10px;
     align-items: center;
 }
 

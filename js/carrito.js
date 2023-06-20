@@ -1,10 +1,8 @@
-
 const tbody = document.querySelector("tbody")
 const btnComprar = document.querySelector("button#botonComprar")
 const divTotal = document.querySelector("div.total#total")
 const items = document.querySelector("h1#items")
 const checkout = recuperarCarritoLS()
-const btnQuitar = document.querySelectorAll
 let subTotal = 0
 
 function recuperarCarritoLS() {
@@ -26,7 +24,7 @@ function calcularSubTotal () {
 
 function cargarCarrito(celularCarrito){
     return `<tr class=carrito>    
-                <td class="imagen"><img src="${celularCarrito.imagen}"></img></td>
+                <td class="imagen"><img id=carritoImg src="${celularCarrito.imagen}"></img></td>
                 <td class="nombre">${celularCarrito.nombre}</td>
                 <td class="monto">${celularCarrito.monto}</td>
             </tr>`
