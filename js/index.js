@@ -30,6 +30,7 @@ function cardsHTML(celular){
             </div>`
 }
 
+
 function cargarCelulares(){
     contenedor.innerHTML = ''
     celulares.forEach((celular)=> {
@@ -38,14 +39,28 @@ function cargarCelulares(){
     activarBotonAgregarCarrito()
 }
 
+function notificacionAgregarCarrito(celular){
+    Toastify({
+        text: `${celular} se agregó al carrito`,
+        duration: 5000,
+        close: true,
+        gravity: "top",
+        position: "right",
+        stopOnFocus: true,
+        style: {
+        background: "linear-gradient(to right, #FF7F50, #FFD700)",
+        }
+    }).showToast();
+}
+
 function activarBotonAgregarCarrito(){
     const botones = document.querySelectorAll("button.button.button-outline")
         for(let boton of botones) {
             boton.addEventListener("click", (a)=> {
                 const celularElegido = celulares.find((celular)=> celular.id === parseInt(a.target.id))       
                 checkout.push(celularElegido)
+                notificacionAgregarCarrito(celularElegido.nombre)
                 localStorage.setItem("carritoCompra", JSON.stringify(checkout))
-                alert("Producto agregado al carrito correctamente.")
             })
         }
 }

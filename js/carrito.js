@@ -32,14 +32,48 @@ function cargarCarrito(celularCarrito){
 
 function cargarTotal(){
     calcularSubTotal()
-    return `<h1 id="saludo">Gracias por su compra!</h1>
-            <h2 id="total">El total es de: $ ${subTotal}</h2>`
+    return `<h2 id="total">El total es de: $ ${subTotal}</h2>`
+}
+
+function notificacionComprar(total){
+    Swal.fire({
+        title: `El total es $ ${total}. ¿Desea confirmar su compra?`,
+        showCancelButton: true,
+        confirmButtonText: 'Comprar',
+        cancelButtonText: `Cancelar`,
+        background: '#000000',
+        color: '#FFFFFF',
+      }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
+                title: 'Compra realizada con exito! ¡Muchas gracias!',
+                background: '#000000',
+                color: '#FFFFFF',
+                })
+            //location.href= "index.html"
+        }
+      })
+}
+
+function notificacionErrorCompra(){
+    Swal.fire({
+        title: 'Oops...',
+        text: 'No hay elementos en el carrito.',
+        background: '#000000',
+        color: '#FFFFFF',
+      })
 }
 
 function activarBotonComprar() {
     divTotal.innerHTML = ""
-    btnComprar.addEventListener("click", () => {
-        divTotal.innerHTML = cargarTotal()   
+    divTotal.innerHTML = cargarTotal()
+    btnComprar.addEventListener("click", () => {   
+        if(checkout.length > 0){
+            calcularSubTotal()
+            notificacionComprar(subTotal)
+        } else{
+            notificacionErrorCompra()
+        }
     })
 }
 
@@ -48,7 +82,7 @@ function cargarCantidadItems() {
 }
 
 if(checkout.length > 0){
-    tbody.innerHTML = ""
+    tbody.innerHTML = ''
     checkout.forEach(celularCarrito => {
         tbody.innerHTML += cargarCarrito(celularCarrito)
     })
