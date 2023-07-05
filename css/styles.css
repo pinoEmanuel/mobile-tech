@@ -57,12 +57,11 @@ h2#concept {
     text-decoration: underline;
 }
 
-h3{
+h3#marcas{
     text-align: center;
-    height: 8px;
-    margin: 10px;
+    margin: 40px;
     font-size: 20px;
-    padding-top: 30px;
+    padding-top: 3px;
 }
 
 
@@ -70,6 +69,16 @@ h2#total{
     color: rgb(182, 174, 174);
     font-size: 30px;
     text-align: center;
+}
+
+input#filtrarCelulares{
+    background-color: rgb(230, 224, 217);
+    width: 35%;
+}
+
+button#btnFiltrarCelulares{
+    color: black;
+    background-color: rgb(230, 224, 217);
 }
 
 .div-card {
