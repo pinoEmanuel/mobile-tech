@@ -50,7 +50,9 @@ function notificacionComprar(total){
                 background: '#000000',
                 color: '#FFFFFF',
                 })
-            //location.href= "index.html"
+
+            localStorage.removeItem("carritoCompra")
+            setTimeout(()=>{location.reload()}, 3000)
         }
       })
 }

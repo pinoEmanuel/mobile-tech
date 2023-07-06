@@ -4,7 +4,9 @@
 
 * {
     background-color: rgb(0,0,0);
-    margin: 10px
+    margin: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 body {
@@ -12,6 +14,20 @@ body {
     padding-right: 5rem;
     align-content: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+main{
+    padding-top: 17%;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    z-index: 999px;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
 }
 
 div#display {
@@ -40,7 +56,7 @@ img#imagen{
 
 h1#titulo{
     text-align: center;
-    padding: 45px;
+    padding-top: 20px;
     color:rgb(202, 123, 32)
 }
 
@@ -52,14 +68,13 @@ h1#items{
 
 h2#concept {
     text-align: left;
-    height: 8px;
     font-size: 20px;
     text-decoration: underline;
 }
 
 h3#marcas{
     text-align: center;
-    margin: 40px;
+    margin: 10px;
     font-size: 20px;
     padding-top: 3px;
 }
