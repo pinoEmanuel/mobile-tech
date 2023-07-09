@@ -87,7 +87,7 @@ h2#total{
 
 input#filtrarCelulares{
     background-color: rgb(230, 224, 217);
-    width: 35%;
+    width: 20%;
 }
 
 button#btnFiltrarCelulares{

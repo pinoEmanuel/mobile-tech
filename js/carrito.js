@@ -1,7 +1,7 @@
 const tbody = document.querySelector("tbody")
 const btnComprar = document.querySelector("button#botonComprar")
 const divTotal = document.querySelector("div.total#total")
-const items = document.querySelector("h1#items")
+const items = document.getElementById("items")
 const checkout = recuperarCarritoLS()
 let subTotal = 0
 
@@ -46,11 +46,11 @@ function notificacionComprar(total){
       }).then((result) => {
         if (result.isConfirmed) {
             Swal.fire({
-                title: 'Compra realizada con exito! ¡Muchas gracias!',
+                title: 'Compra realizada con exito! ¡Muchas gracias!.',
+                text: 'El carrito será borrado en segundos.',
                 background: '#000000',
                 color: '#FFFFFF',
                 })
-
             localStorage.removeItem("carritoCompra")
             setTimeout(()=>{location.reload()}, 3000)
         }
@@ -79,8 +79,8 @@ function activarBotonComprar() {
     })
 }
 
-function cargarCantidadItems() {
-    items.textContent = "Carrito: " + checkout.length + " items."
+function cargarCantidadItems() { 
+    items.innerHTML += "Carrito: " + checkout.length + " items."
 }
 
 if(checkout.length > 0){
@@ -92,4 +92,3 @@ if(checkout.length > 0){
 
 cargarCantidadItems()
 activarBotonComprar()
-

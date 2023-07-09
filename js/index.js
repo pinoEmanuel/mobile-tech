@@ -1,7 +1,6 @@
 const contenedor = document.querySelector('div.contenedor#contenedor')
 const inputFiltro = document.querySelector('#filtrarCelulares')
 const btnFiltro = document.querySelector('button#btnFiltrarCelulares')
-
 const LINK = "js/celulares.json"
 const celulares = []
 
@@ -73,7 +72,6 @@ function filtrarCelulares(){
         cargarCelulares(celulares)
     }
 }
-
 
 btnFiltro.addEventListener("click", ()=> {filtrarCelulares()})
 obtenerCelulares()
